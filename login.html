@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+  <link rel="stylesheet" href="./CSS/login.css">
+<title>Autentificare</title>
+</head>
+<body>
+
+<script>
+function functia1()
+{
+	var a=document.getElementById("PUtilizator");
+	if(a.type==="password")
+		a.type="text";
+	else
+		a.type="password";
+}
+function functia2()
+{
+	var a=document.getElementById("PAdm");
+	if(a.type==="password")
+		a.type="text";
+	else
+		a.type="password";
+}
+</script>
+
+<div class="center">
+<div id="titlu">
+<h1>Pagină de Autentificare</h1><br>
+<h2>Pentru Calatori</h2>
+</div>
+<h3>Închirieri Auto</h3>
+<form action="PHP/login.php" method="post" class="formular">
+<table>
+<tr> <td>Nume de utilizator</td>  <td><input type="text" name="numeutilizator" value=""/></td></tr>
+<tr> <td>Parola</td>  <td><input type="password" name="parola" value="" id="PUtilizator"/></td>
+<td><input type="checkbox" onclick="functia1()">Arată Parola</td></tr>
+<tr> <td><input type="submit" value="Conectare" class="button"></td>  </tr>
+</table>
+</form>
+
+<p style='font-size:130%'>Puteţi crea un cont de utilizator dacă nu aveţi unul</p>
+
+<a href='crearecont.html'><button class="button">Creează Cont</button></a>
+
+</br>
+<a href="pornire.html"><button class="button">Pagina de Pornire</button></a>
+</div>
+</body>

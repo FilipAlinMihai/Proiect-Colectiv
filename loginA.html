@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+  <link rel="stylesheet" href="./CSS/login.css">
+<title>Autentificare</title>
+</head>
+<body>
+
+<script>
+function functia1()
+{
+	var a=document.getElementById("PUtilizator");
+	if(a.type==="password")
+		a.type="text";
+	else
+		a.type="password";
+}
+function functia2()
+{
+	var a=document.getElementById("PAdm");
+	if(a.type==="password")
+		a.type="text";
+	else
+		a.type="password";
+}
+</script>
+
+<div class="center">
+<div id="titlu">
+<h1>Pagină de Autentificare</h1><br>
+<h2>Pentru Administrator</h2>
+</div>
+<h3>Fly Trip</h3>
+
+<h3>Administrator</h3>
+<form action="PHP/LA.php" method="post" class="formular">
+<table>
+<tr> <td>Nume de administrator</td>  <td><input type="text" name="numeuADM" value=""/></td></tr>
+<tr> <td>Parolă de administrator</td>  <td><input type="password" name="parolaA" value="" id="PAdm"/></td>
+<td><input type="checkbox" onclick="functia2()">Arată Parola</td></tr>
+<tr> <td><input type="submit" value="Conectare" class="button"></td>  </tr>
+</table>
+</form>
+</br>
+<a href="pornire.html"><button class="button">Pagina de Pornire</button></a>
+</div>
+</body>

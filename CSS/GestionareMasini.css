@@ -1,0 +1,53 @@
+body 
+{
+	background-image: url("../imagini/background1.jpg");
+	background-size: 1000px 1500px;
+}
+h1
+{
+	text-shadow: 1px 1px;
+}
+.center
+{
+	
+	margin: auto;
+	width: 50%;
+	padding: 15px;
+	border:5px solid #00BFFF;
+  
+}
+div
+{
+	box-shadow: 10px 10px;
+}
+.formular
+{
+	padding:7px;
+	border:5px solid #00BFFF;
+}
+.button
+{
+	font-size:130%;
+	border-radius: 12px;
+	background-color: #00BFFF;
+	color: white;
+	width: 150px;
+	margin:10px;
+}
+input[type=text]{
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size:110%;
+  background-color: white;
+}
+
+input[type=number]{
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size:110%;
+  background-color: white;
+}

@@ -1,0 +1,48 @@
+body {
+	background-image: url("../imagini/background7.jpg");
+	background-color: #DCDCDC;
+	background-size: 2000px 900px;
+	font-size:120%;
+	color:black;
+}
+h1
+{
+	text-shadow: 1px 1px;
+}
+.center 
+{
+	text-align:center;
+	margin: auto;
+	width: 50%;
+	padding: 15px;
+	border:7px solid #333a7b;
+	padding:18px;
+}
+
+.formular
+{
+	border:7px solid #00BFFF;
+	color:white;
+}
+.button
+{
+	font-size:130%;
+	border-radius: 12px;
+	background-color: #00BFFF;
+	color: white;
+	width: 150px;
+	padding:7px;
+}
+#tabel
+{
+	padding:10px;
+}
+input
+{
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #777;
+  border-radius: 4px;
+  font-size:110%;
+  background-color: white;
+}

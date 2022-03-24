@@ -1,0 +1,46 @@
+body 
+{
+	background-image: url("../imagini/background1.jpg");
+	background-color: #DCDCDC;
+}
+h1
+{
+	text-shadow: 1px 1px;
+}
+.center 
+{	
+	margin: auto;
+	width: 50%;
+	padding: 15px;
+    border:5px solid #00BFFF
+  
+}
+div
+{
+	text-align:center;
+	box-shadow: 10px 10px;
+}
+.button
+{
+	font-size:130%;
+	border-radius: 12px;
+	background-color: #00BFFF;
+	color: white;
+	width: 150px;
+}
+#titlu
+{
+	text-align:center;
+	box-shadow: 0px 0px;
+}
+
+input {
+  border: 2px solid #777;
+  border-radius: 4px;
+  font-size:110%;
+}
+table
+{
+  margin-left: auto; 
+  margin-right: auto;
+}

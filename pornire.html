@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+ <link rel="stylesheet" href="./CSS/index.css">
+<title>Închirieri auto</title>
+</head>
+<body>
+
+<script>
+var i=0;
+var imagini=[];
+var timp=5000;
+imagini[0]="imagini/Paris.jpg";
+imagini[1]="imagini/Londra.jpg";
+imagini[2]="imagini/Madrid.jpg";
+imagini[3]="imagini/Lisabona.jpg";
+imagini[4]="imagini/Napoli.jpg";
+imagini[5]="imagini/Miami.jpg";
+imagini[6]="imagini/Barcelona.jpg";
+imagini[7]="imagini/NewYork.jpg";
+
+function fun(){
+document.imgs.src=imagini[i];
+if(i<imagini.length-1){
+i++;
+}
+else
+{
+i=0;
+}
+setTimeout("fun()",timp);
+}
+window.onload=fun;
+</script>
+
+
+
+<div class="rotund">
+<div class="Titlu" id="tit">
+<h1>Calatoreste linistit </h1>
+<p id="subtitlu">Calatoreste fericit</p>
+</div>
+<div id="cont">
+	<p>Informeazate cu Fly Trip</p>
+</div>
+<div class="butoane">
+<a href='crearecont.html'><button  class="button">Creează Cont</button></a><br>
+<a href='login.html'><button class="button">Autentificare Clent</button></a><br>
+<a href='loginA.html'><button class="button">Autentificare Administrator</button></a>
+</div>
+</div>
+</br>
+<div class="Fereastra">
+<img src="imagini/Paris.jpg" name="imgs" width="750" height="440"><br>
+<p>Potentiale locatii</p>
+</div>
+</br>
+
+<div class="rotund" id="date">
+<h2>Despre noi</h2>
+<p>Aici puteti cunoaste experientele traite de altii</p>
+<p>Va ajutam sa gasiti destinatia perfecta pentru urmatorrea vacanta </p>
+<p>Pentru noi parerea utilizatorului e cea mai importanta </p>
+</div>
+</br>
+
+<div class="rotund" id="date1">
+<h2>Date de contact</h2>
+<h3>Contactează-ne prin : </h3>
+<p>E-mail: fly.trip@gmail.com</p>
+<p>Număr de telefon: 0734457383</p>
+<p>Adresa: Timisoara Strada Unirii Nr 27</p>
+</div>
+
+</body>
