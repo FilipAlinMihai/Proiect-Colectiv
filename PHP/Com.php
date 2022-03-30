@@ -1,7 +1,7 @@
 <?php
+	session_start();
     $coment=$_POST["coment"];
 	$id=$_POST["id"];
-	$untilizator="faranume";
 
 	$b=mysqli_connect( "localhost", "root",'',"FlyTrip");
     if (mysqli_connect_errno()) {
@@ -12,7 +12,7 @@
 
 
    
-    $adauga="Insert into `comentarii` values ('".$coment."','".$id."','".$untilizator."')";
+    $adauga="Insert into `comentarii` values ('".$coment."','".$id."','".$_SESSION['email']."')";
 	 	if(mysqli_query($b,$adauga))
 			echo "Comentariu a fost adăugată";
 	 	else

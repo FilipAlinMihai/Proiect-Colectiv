@@ -40,6 +40,24 @@ if(mysqli_connect_errno()){
 			echo "Tabelul 'comentarii' a fost creat cu succes <br/>";
 		else 
 			echo "Eroare".$b->error;
+
+	$sql="CREATE TABLE `Cereri` (
+		`Utilizator` VARCHAR(50) NOT NULL,
+		`Destinatar` VARCHAR(50) NOT NULL
+		) ";
+		if($b->query($sql)===TRUE)
+			echo "Tabelul 'Cereri' a fost creat cu succes <br/>";
+		else 
+			echo "Eroare".$b->error;
+
+	$sql="CREATE TABLE `Prieteni` (
+		`Persoana1` VARCHAR(50) NOT NULL,
+		`Persoana2` VARCHAR(50) NOT NULL
+		) ";
+		if($b->query($sql)===TRUE)
+			echo "Tabelul 'Prieteni' a fost creat cu succes <br/>";
+		else 
+			echo "Eroare".$b->error;
 	$b->close();
 
 ?>

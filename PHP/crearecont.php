@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$_SESSION['numeutilizator']=$_POST["numeutilizator"];
+	$_SESSION['email']=$_POST["email"];
 	$_SESSION['parola']=$_POST["parola1"];
 	$parola2=$_POST["parola2"];
 	$email=$_POST["email"];
