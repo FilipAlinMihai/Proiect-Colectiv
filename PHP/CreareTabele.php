@@ -34,7 +34,7 @@ if(mysqli_connect_errno()){
 	$sql="CREATE TABLE `Comentarii` (
 		`Comentariu` VARCHAR(100) NOT NULL,
 		`IDPostare` VARCHAR(100) NOT NULL,
-		`Utilizator` VARCHAR(20) NOT NULL
+		`Utilizator` VARCHAR(50) NOT NULL
 		) ";
 		if($b->query($sql)===TRUE)
 			echo "Tabelul 'comentarii' a fost creat cu succes <br/>";
