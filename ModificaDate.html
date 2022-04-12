@@ -14,6 +14,37 @@
 </div>
 <h2>Fly Trip</h2>
 <h1>Modificare date personale</h1>
-<h1>Urmeaza sa fie implementat</h1>
+<p style='font-size:130%'>Pentru modificarea numelui de utilizator completaţi formularul următor</p>
+<form action="PHP/ModificaNume.php" method="post" class="formular" enctype="multipart/form-data">
+<table>
+<tr> <td>Nume Nou</td>  <td><input type="text" name="nume" value=""/></td></tr>
+<tr> <td>Email</td>  <td><input type="text" name="email" value=""/></td></tr>
+<tr> <td>Parola</td>  <td><input type="text" name="parola" value=""/></td></tr>
+<tr> <td><input type="submit" value="Modifica" class="button"></td>  </tr>
+</table>
+</form>
+
+<p style='font-size:130%'>Pentru modificarea adresei de email completaţi formularul următor</p>
+<form action="PHP/ModificaEmail.php" method="post" class="formular" enctype="multipart/form-data">
+<table>
+<tr> <td>Enail Nou</td>  <td><input type="text" name="emailnou" value=""/></td></tr>
+<tr> <td>Email Curent</td>  <td><input type="text" name="email" value=""/></td></tr>
+<tr> <td>Parola</td>  <td><input type="text" name="parola" value=""/></td></tr>
+<tr> <td><input type="submit" value="Modifica" class="button"></td>  </tr>
+</table>
+</form>
+
+
+<p style='font-size:130%'>Pentru modificarea parolei completaţi formularul următor</p>
+<form action="PHP/ModificaParola.php" method="post" class="formular" enctype="multipart/form-data">
+<table>
+<tr> <td>Parola Noua</td>  <td><input type="text" name="parolanoua" value=""/></td></tr>
+<tr> <td>Confirmare Parola</td>  <td><input type="text" name="confirmaparola" value=""/></td></tr>
+<tr> <td>Email Curent</td>  <td><input type="text" name="email" value=""/></td></tr>
+<tr> <td>Parola Curenta</td>  <td><input type="text" name="parola" value=""/></td></tr>
+<tr> <td><input type="submit" value="Modifica" class="button"></td>  </tr>
+</table>
+</form>
 </div>
+
 </body>
