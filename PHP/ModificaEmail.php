@@ -18,7 +18,7 @@
 				echo "Datele au fost modificate";
             }
 			else
-				echo $nume;
+				echo "Proces esuat". mysqli_errno($b). " : ". mysqli_error($b);
 		}
 		else
 		{
