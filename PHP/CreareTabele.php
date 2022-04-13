@@ -20,7 +20,7 @@ if(mysqli_connect_errno()){
 	`Email` VARCHAR(100) NOT NULL,
 	`Tip` VARCHAR(20) NOT NULL,
 	`Descriere` VARCHAR(100) ,
-	`Numar` INT(2) PRIMARY KEY,
+	`Numar` INT(4) PRIMARY KEY,
 	`Imagine1` LONGBLOB NOT NULL,
     `Imagine2` LONGBLOB NOT NULL,
     `Imagine3` LONGBLOB NOT NULL
@@ -56,6 +56,36 @@ if(mysqli_connect_errno()){
 		) ";
 		if($b->query($sql)===TRUE)
 			echo "Tabelul 'Prieteni' a fost creat cu succes <br/>";
+		else 
+			echo "Eroare".$b->error;
+	$sql="CREATE TABLE `Administrator` (
+		`Nume` VARCHAR(50) NOT NULL PRIMARY KEY,
+		`Parola` VARCHAR(50) NOT NULL
+		) ";
+		if($b->query($sql)===TRUE)
+			echo "Tabelul 'Administrator' a fost creat cu succes <br/>";
+		else 
+			echo "Eroare".$b->error;	
+
+	$sql="CREATE TABLE `Apreciere` (
+		`Postare` INT(4) NOT NULL ,
+		`Persoana` VARCHAR(50) NOT NULL
+		) ";
+		if($b->query($sql)===TRUE)
+			echo "Tabelul 'Apreciere' a fost creat cu succes <br/>";
+		else 
+			echo "Eroare".$b->error;
+	$sql="CREATE TABLE `Recomandari` (
+		`Locatie` VARCHAR(100) NOT NULL,
+		`Administrator` VARCHAR(50) NOT NULL,
+		`Descriere` VARCHAR(200) ,
+		`Numar` INT(4) PRIMARY KEY,
+		`Imagine1` LONGBLOB NOT NULL,
+		`Imagine2` LONGBLOB NOT NULL,
+		`Imagine3` LONGBLOB NOT NULL
+		) ";
+		if($b->query($sql)===TRUE)
+			echo "Tabelul 'Recomandari' a fost creat cu succes <br/>";
 		else 
 			echo "Eroare".$b->error;
 	$b->close();

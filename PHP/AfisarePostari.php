@@ -1,5 +1,5 @@
 <?php
-	//header("content-type:image/jpeg");
+	
 	
 	echo "<style>
 	body 
