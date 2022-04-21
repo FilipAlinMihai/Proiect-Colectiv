@@ -34,7 +34,7 @@ if(mysqli_connect_errno()){
 	$sql="CREATE TABLE `Comentarii` (
 		`Comentariu` VARCHAR(100) NOT NULL,
 		`IDPostare` VARCHAR(100) NOT NULL,
-		`Utilizator` VARCHAR(50) NOT NULL
+		`Utilizator` VARCHAR(100) NOT NULL
 		) ";
 		if($b->query($sql)===TRUE)
 			echo "Tabelul 'comentarii' a fost creat cu succes <br/>";
@@ -42,8 +42,8 @@ if(mysqli_connect_errno()){
 			echo "Eroare".$b->error;
 
 	$sql="CREATE TABLE `Cereri` (
-		`Utilizator` VARCHAR(50) NOT NULL,
-		`Destinatar` VARCHAR(50) NOT NULL
+		`Utilizator` VARCHAR(100) NOT NULL,
+		`Destinatar` VARCHAR(100) NOT NULL
 		) ";
 		if($b->query($sql)===TRUE)
 			echo "Tabelul 'Cereri' a fost creat cu succes <br/>";
@@ -51,16 +51,16 @@ if(mysqli_connect_errno()){
 			echo "Eroare".$b->error;
 
 	$sql="CREATE TABLE `Prieteni` (
-		`Persoana1` VARCHAR(50) NOT NULL,
-		`Persoana2` VARCHAR(50) NOT NULL
+		`Persoana1` VARCHAR(100) NOT NULL,
+		`Persoana2` VARCHAR(100) NOT NULL
 		) ";
 		if($b->query($sql)===TRUE)
 			echo "Tabelul 'Prieteni' a fost creat cu succes <br/>";
 		else 
 			echo "Eroare".$b->error;
 	$sql="CREATE TABLE `Administrator` (
-		`Nume` VARCHAR(50) NOT NULL PRIMARY KEY,
-		`Parola` VARCHAR(50) NOT NULL
+		`Nume` VARCHAR(100) NOT NULL PRIMARY KEY,
+		`Parola` VARCHAR(100) NOT NULL
 		) ";
 		if($b->query($sql)===TRUE)
 			echo "Tabelul 'Administrator' a fost creat cu succes <br/>";
@@ -69,7 +69,7 @@ if(mysqli_connect_errno()){
 
 	$sql="CREATE TABLE `Apreciere` (
 		`Postare` INT(4) NOT NULL ,
-		`Persoana` VARCHAR(50) NOT NULL
+		`Persoana` VARCHAR(100) NOT NULL
 		) ";
 		if($b->query($sql)===TRUE)
 			echo "Tabelul 'Apreciere' a fost creat cu succes <br/>";
@@ -77,7 +77,7 @@ if(mysqli_connect_errno()){
 			echo "Eroare".$b->error;
 	$sql="CREATE TABLE `Recomandari` (
 		`Locatie` VARCHAR(100) NOT NULL,
-		`Administrator` VARCHAR(50) NOT NULL,
+		`Administrator` VARCHAR(100) NOT NULL,
 		`Descriere` VARCHAR(200) ,
 		`Numar` INT(4) PRIMARY KEY,
 		`Imagine1` LONGBLOB NOT NULL,
