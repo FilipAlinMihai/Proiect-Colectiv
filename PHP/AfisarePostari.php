@@ -4,12 +4,21 @@
 	echo "<style>
 	body 
 	{  
-		background-image: url('../imagini/background1.jpg');
+		background-image: url('../imagini/background15.jpg');
 		background-size: 1700px 2000px;
 	} 
 	.centrat
 	{
-		text-align:center;
+		width: 300px;
+		text-align: center;
+		margin: auto;
+		padding: 10px 15px;
+		background-color: lightblue;
+		border-radius: 30px;
+	}
+	.centrat1
+	{
+		text-align: center;
 	}
 	.grid-container
 	{
@@ -22,12 +31,16 @@
 	div.grid-item:hover 
 	{
 		border: 5px solid #0066cc;
+		
 	}
 	.grid-item 
 	{
 		margin: 7px;
 		border: 4px solid #00BFFF;
 		text-align: center;
+		background-color: 	#f5f5dc;
+		color: black;
+		border-radius: 30px;
 	}
 	.button
 		{
@@ -35,7 +48,7 @@
 		background-color: #00BFFF;
 		padding: 10px 15px;
 			font-size: 19x;
-			box-shadow: 0 9px #999;
+			
 			font-family: Arial, Helvetica, sans-serif;
 		font-weight: bold;
 		}
@@ -45,7 +58,7 @@
 		background-color: #00BFFF;
 		padding: 10px 15px;
 			font-size: 19x;
-			box-shadow: 0 9px #999;
+			
 	}
 	.continut{
 
@@ -74,22 +87,7 @@
 	</style>
 	";
 
-	echo '<script type="text/JavaScript">
-	imagini = new Array("imagini/Paris.jpg","imagini/Lisabona.jpg","imagini/Roma.jpg");
-nr=0;
-lung=imagini.length;
-
-function gonext() {
-if (document.images) {
-nr++;   
-if(nr>(lung-1))
-{
-nr=0;
-}
-document.imgs.src=imagini[nr];
-}
-}
-</script>';
+	
 	$b = new mysqli('localhost', 'root', '', 'FlyTrip');
 
 	if (mysqli_connect_errno()) {
@@ -106,7 +104,6 @@ document.imgs.src=imagini[nr];
 	while($row = $info->fetch_assoc()) {
 		echo '<div class="grid-item">';
 		echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['Imagine1'] ).'" width="350" height="200" id="imagine" name="imgs"/>';
-		echo '</br><a href="javascript:gonext()">Următoarea ->></a>';
 		echo '<p style="font-size:18"> Locatie: '. $row['Locatie']."</p>";
 		echo '<p style="font-size:18"> -- Email : '. $row['Email']."</p>";
 		echo '<p style="font-size:18"> -- Tip: '. $row['Tip']."</p>";
@@ -134,6 +131,12 @@ document.imgs.src=imagini[nr];
 		<tr> <td><input type="submit" value="Apreciaza" id="apreciere" class="button"></td>  </tr>
 		</table>
 		</form>';
+		echo '</br><form action="Poze.php" method="post" enctype="multipart/form-data">
+		<table>
+		<tr> <td></td>  <td><input type="hidden" name="poze" value="'.$row['Numar'].'"/></td></tr>
+		<tr> <td><input type="submit" value="Pozele" id="pozele" class="button"></td>  </tr>
+		</table>
+		</form></br>';
 		$com = "SELECT count(Postare) FROM `apreciere` where Postare=".$row['Numar']."";
 
 		$numar = $b->query($com);
@@ -150,7 +153,7 @@ document.imgs.src=imagini[nr];
 	}
 
 	echo '</div>';
-	echo "<div class='centrat'>";
+	echo "<div class='centrat1'>";
 	echo '<br><a href="../PaginaP.html"><button class="button">Pagina Principală</button></a>';
 	echo '</div>';
 	echo '</br></br></br></br>';
@@ -161,5 +164,5 @@ document.imgs.src=imagini[nr];
 	
 	$b->close();
 
-
+//SELECT count(Persoana),NUmar FROM `postare`,`apreciere` WHERE Postare=Numar GROUP BY Numar ORDER BY count(Persoana) DESC
 ?>
