@@ -23,7 +23,8 @@ if(mysqli_connect_errno()){
 	`Numar` INT(4) PRIMARY KEY,
 	`Imagine1` LONGBLOB NOT NULL,
     `Imagine2` LONGBLOB NOT NULL,
-    `Imagine3` LONGBLOB NOT NULL
+    `Imagine3` LONGBLOB NOT NULL,
+	`Data` DATETIME NOT NULL
 	) ";
 	if($b->query($sql)===TRUE)
 		echo "Tabelul 'postare' a fost creat cu succes <br/>";
@@ -32,6 +33,7 @@ if(mysqli_connect_errno()){
     
 
 	$sql="CREATE TABLE `Comentarii` (
+		`ID` INT(4) PRIMARY KEY,
 		`Comentariu` VARCHAR(100) NOT NULL,
 		`IDPostare` VARCHAR(100) NOT NULL,
 		`Utilizator` VARCHAR(100) NOT NULL
@@ -82,7 +84,8 @@ if(mysqli_connect_errno()){
 		`Numar` INT(4) PRIMARY KEY,
 		`Imagine1` LONGBLOB NOT NULL,
 		`Imagine2` LONGBLOB NOT NULL,
-		`Imagine3` LONGBLOB NOT NULL
+		`Imagine3` LONGBLOB NOT NULL,
+		`Data` DATETIME NOT NULL
 		) ";
 		if($b->query($sql)===TRUE)
 			echo "Tabelul 'Recomandari' a fost creat cu succes <br/>";

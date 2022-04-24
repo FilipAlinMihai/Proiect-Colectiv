@@ -112,7 +112,7 @@
 		echo '</div>';
 		echo '<p style="font-size:18"> --ID: '.$row['Numar']."</p>";
 		echo '<p style="font-size:18"> --Lasa un comentariu</p> </br> 
-		<form action="Com.php" method="post" enctype="multipart/form-data">
+		<form action="Com.php" method="post" enctype="multipart/form-data" target="_self">
 		<table>
 		<tr> <td><p>Comentariu</p></td>  <td><input type="text" name="coment" class="textinput" value=""/></td></tr>
 		<tr> <td></td>  <td><input type="hidden" name="id" value="'.$row['Numar'].'"/></td></tr>

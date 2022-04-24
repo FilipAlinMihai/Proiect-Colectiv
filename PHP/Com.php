@@ -10,13 +10,29 @@
 	$com="SELECT * FROM `postare`";
 		$info=$b->query($com);
 
-
+		$codul=1;
+		$verif=1;
+		while($codul<100000 && $verif==1)
+		{
+			$comanda="select * from `comentarii`";
+			$info1=$b->query($comanda);
+			$verif=0;
+			while($row1=$info1->fetch_assoc())
+			{
+				if($row1['ID']==$codul)
+				$verif=1;	
+			}
+			if($verif==0 )
+				break;
+			$codul=$codul+1;
+		}
    
-    $adauga="Insert into `comentarii` values ('".$coment."','".$id."','".$_SESSION['email']."')";
-	 	if(mysqli_query($b,$adauga))
-			echo "Comentariu a fost adăugată";
+    $adauga="Insert into `comentarii` values (".$codul.",'".$coment."','".$id."','".$_SESSION['email']."')";
+	if(mysqli_query($b,$adauga)){
+		header("Location: AfisarePostari.php");
+	}
 	 	else
-	 		echo "Procesul eşuat". mysqli_errno($b). " : ". mysqli_error($b);
+			echo  '<script>alert("Procesul eşuat". mysqli_errno($b). " : ". mysqli_error($b))</script>';
     
     
 $b->close();

@@ -4,7 +4,7 @@
 	echo "<style>
 	body 
 	{  
-		background-image: url('../imagini/background1.jpg');
+		background-image: url('../imagini/background15.jpg');
 		background-size: 1700px 2000px;
 	} 
 	.centrat
@@ -37,6 +37,9 @@
 		margin: 7px;
 		border: 4px solid #00BFFF;
 		text-align: center;
+		background-color: 	#f5f5dc;
+		color: black;
+		border-radius: 30px;
 	}
 	.button
 		{

@@ -30,8 +30,9 @@
 			break;
 		$codul=$codul+1;
 	}
-	
-    $postare="Insert into `postare` values ('".$locatie."','".$email."','".$tip."','".$descriere."',".$codul.",'".$imagine."','".$imagine2."','".$imagine3."')";
+	date_default_timezone_set("Europe/Bucharest");
+	$d=date("Y/m/d ").date("h:i");
+    $postare="Insert into `postare` values ('".$locatie."','".$email."','".$tip."','".$descriere."',".$codul.",'".$imagine."','".$imagine2."','".$imagine3."','".$d."')";
 		if(mysqli_query($b,$postare))
 			echo "Postarea a fost adăugată";
 		else

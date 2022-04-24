@@ -72,7 +72,6 @@ session_start();
 	}
 	</style>
 	";
-	$id=$_POST["id"];
 
 	$b = new mysqli('localhost', 'root', '', 'FlyTrip');
 
@@ -87,7 +86,7 @@ session_start();
 	echo '<div class="grid-container">';
 	if ($info->num_rows > 0) {
 	while($row = $info->fetch_assoc()){
-     if($id==$row['IDPostare']){
+     if($_SESSION['Comentariu']==$row['IDPostare']){
 		echo '<div class="grid-item">';
 		echo '<p style="font-size:18"> --Comentariu : '. $row['Comentariu']."</p>";
 		echo '<p style="font-size:18"> --Utilizator : '. $row['Utilizator']."</p>";

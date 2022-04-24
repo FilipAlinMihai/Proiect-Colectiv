@@ -4,7 +4,7 @@
 	echo "<style>
 	body 
 	{  
-		background-image: url('../imagini/background1.jpg');
+		background-image: url('../imagini/background15.jpg');
 		background-size: 1700px 2000px;
 	} 
 	.centrat
@@ -28,6 +28,9 @@
 		margin: 7px;
 		border: 4px solid #00BFFF;
 		text-align: center;
+		background-color: 	#f5f5dc;
+		color: black;
+		border-radius: 30px;
 	}
 	.button
 		{
@@ -97,7 +100,7 @@
 	while($row = $info->fetch_assoc()) {
         if($row['Email']==$_SESSION['email']){
 		echo '<div class="grid-item">';
-		echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['Imagine1'] ).'" width="350" height="200"/>';
+		echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['Imagine1'] ).'" width="350" height="200" id="imagine"/>';
 		echo '<p style="font-size:18"> Locatie: '. $row['Locatie']."</p>";
 		echo '<p style="font-size:18"> -- Email : '. $row['Email']."</p>";
 		echo '<p style="font-size:18"> -- Tip: '. $row['Tip']."</p>";
