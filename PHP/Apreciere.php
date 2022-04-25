@@ -2,7 +2,7 @@
 
 session_start();
 	$id=$_POST["ida"];
-
+	$tip=$_POST["tip2"];
 	$b=mysqli_connect( "localhost", "root",'',"FlyTrip");
     if (mysqli_connect_errno()) {
 		exit('Connect failed: '. mysqli_connect_error());
@@ -22,8 +22,15 @@ session_start();
 	}
    if($a==0){
     $adauga="Insert into `Apreciere` values ('".$id."','".$_SESSION['email']."')";
-	 	if(mysqli_query($b,$adauga))
-         header("Location: AfisarePostari.php");
+	 	if(mysqli_query($b,$adauga)){
+			if($tip=='1')
+			header("Location: AfisarePostari.php#".$id."");
+			else if($tip=='2')
+				header("Location: PostariApreciate.php#".$id."");
+				else if ($tip=='3') 
+					header("Location: PostariComentate.php#".$id."");
+		 }
+        
 	 	else
 	 		echo "Procesul eşuat". mysqli_errno($b). " : ". mysqli_error($b);
    }
@@ -32,7 +39,13 @@ session_start();
     $com="DELETE FROM `Apreciere` where Postare='".$id."' and Persoana='".$_SESSION['email']."'";
 
 	$info=$b->query($com);
-    header("Location: AfisarePostari.php");
+    if($tip=='1')
+			header("Location: AfisarePostari.php#".$id."");
+			else if($tip=='2')
+				header("Location: PostariApreciate.php#".$id."");
+				else if ($tip=='3') 
+					header("Location: PostariComentate.php#".$id."");
+					
    }
 
 ?>

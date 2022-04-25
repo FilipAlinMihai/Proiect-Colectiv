@@ -2,6 +2,7 @@
     session_start();
     $id=$_POST["id"];
     $idp=$_POST["idp"];
+	$tip=$_POST["tip"];
 	$b = new mysqli('localhost', 'root', '', 'FlyTrip');
 
 	if (mysqli_connect_errno()) {
@@ -12,6 +13,7 @@
 
 	if(mysqli_query($b,$com)){
                      $_SESSION['Comentariu']=$idp;
+					 $_SESSION['tip']=$tip;
 					 header("Location: AfisareCom1.php");
                     }
 				 else

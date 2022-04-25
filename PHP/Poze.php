@@ -1,5 +1,6 @@
 <?php
 	$id=$_POST["poze"];
+	$tip=$_POST["tip3"];
 	session_start();
 	echo "<style>
 	body 
@@ -108,7 +109,14 @@
 
 	echo '</div>';
 	echo "<div class='centrat'>";
-	echo '<br><a href="AfisarePostari.php"><button class="button">Pagina cu postari</button></a>';
+	if($tip=='1')
+			echo '<br><a href="AfisarePostari.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
+			else if($tip=='2')
+				echo '<br><a href="PostariApreciate.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
+				else if ($tip=='3') 
+					echo '<br><a href="PostariComentate.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
+					else if($tip=='4')
+						echo '<br><a href="PostariPropri.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
 	echo '</div>';
 	echo '</br></br></br></br>';
 	}

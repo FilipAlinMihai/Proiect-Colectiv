@@ -2,7 +2,7 @@
 	session_start();
     $coment=$_POST["coment"];
 	$id=$_POST["id"];
-
+	$tip=$_POST["tip"];
 	$b=mysqli_connect( "localhost", "root",'',"FlyTrip");
     if (mysqli_connect_errno()) {
 		exit('Connect failed: '. mysqli_connect_error());
@@ -29,7 +29,14 @@
    
     $adauga="Insert into `comentarii` values (".$codul.",'".$coment."','".$id."','".$_SESSION['email']."')";
 	if(mysqli_query($b,$adauga)){
-		header("Location: AfisarePostari.php");
+		if($tip=='1')
+			header("Location: AfisarePostari.php#".$id."");
+			else if($tip=='2')
+				header("Location: PostariApreciate.php#".$id."");
+				else if ($tip=='3') 
+					header("Location: PostariComentate.php#".$id."");
+					else if($tip=='4')
+						header("Location: PostariPropri.php#".$id."");
 	}
 	 	else
 			echo  '<script>alert("Procesul eşuat". mysqli_errno($b). " : ". mysqli_error($b))</script>';

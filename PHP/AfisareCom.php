@@ -73,7 +73,7 @@ session_start();
 	</style>
 	";
 	$id=$_POST["id"];
-
+	$tip=$_POST["tip1"];
 	$b = new mysqli('localhost', 'root', '', 'FlyTrip');
 
 	if (mysqli_connect_errno()) {
@@ -98,6 +98,7 @@ session_start();
 		<table>
 		<tr> <td></td>  <td><input type="hidden" name="id" value="'.$row['ID'].'"/></td></tr>
 		<tr> <td></td>  <td><input type="hidden" name="idp" value="'.$row['IDPostare'].'"/></td></tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip" value="'.$tip.'"/></td></tr>
 		<tr> <td><input type="submit" value="Sterge" class="button"></td>  </tr>
 		</table>
 		</form>';
@@ -109,7 +110,15 @@ session_start();
 
 	echo '</div>';
 	echo "<div class='centrat'>";
-	echo '<br><a href="AfisarePostari.php" ><button class="button">Pagina Principală</button></a>';
+
+	if($tip=='1')
+			echo '<br><a href="AfisarePostari.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
+			else if($tip=='2')
+				echo '<br><a href="PostariApreciate.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
+				else if ($tip=='3') 
+					echo '<br><a href="PostariComentate.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
+					else if($tip=='4')
+						echo '<br><a href="PostariPropri.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
 	echo '</div>';
 	echo '</br></br></br></br>';
 }

@@ -93,7 +93,7 @@
 	if (mysqli_connect_errno()) {
 		exit('Connect failed: '. mysqli_connect_error());
 	}
-	$com = "SELECT * FROM `postare`"; 
+	$com = "SELECT * FROM `postare` ORDER BY Data DESC;"; 
 	
 	$numar=0;
 	$info = $b->query($com);
@@ -104,7 +104,7 @@
 	while($row = $info->fetch_assoc()) {
 		echo '<div class="grid-item">';
 		echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['Imagine1'] ).'" width="350" height="200" id="imagine" name="imgs"/>';
-		echo '<p style="font-size:18"> Locatie: '. $row['Locatie']."</p>";
+		echo '<p style="font-size:18" id='.$row['Numar'].'> Locatie: '. $row['Locatie']."</p>";
 		echo '<p style="font-size:18"> -- Email : '. $row['Email']."</p>";
 		echo '<p style="font-size:18"> -- Tip: '. $row['Tip']."</p>";
 		echo '<div class="continut">';
@@ -112,31 +112,36 @@
 		echo '</div>';
 		echo '<p style="font-size:18"> --ID: '.$row['Numar']."</p>";
 		echo '<p style="font-size:18"> --Lasa un comentariu</p> </br> 
-		<form action="Com.php" method="post" enctype="multipart/form-data" target="_self">
+		<form action="Com.php" method="post" enctype="multipart/form-data">
 		<table>
 		<tr> <td><p>Comentariu</p></td>  <td><input type="text" name="coment" class="textinput" value=""/></td></tr>
 		<tr> <td></td>  <td><input type="hidden" name="id" value="'.$row['Numar'].'"/></td></tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip" value="'.'1'.'"/></td></tr>
 		<tr> <td><input type="submit" value="Adauga" class="button"></td>  </tr>
 		</table>
 		</form>';
 		echo '<form action="AfisareCom.php" method="post" enctype="multipart/form-data">
 		<table>
 		<tr> <td></td>  <td><input type="hidden" name="id" value="'.$row['Numar'].'"/></td></tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip1" value="'.'1'.'"/></td></tr>
 		<tr> <td><input type="submit" value="Comentarii" class="button"></td>  </tr>
 		</table>
 		</form>';
 		echo '<form action="Apreciere.php" method="post" enctype="multipart/form-data">
 		<table>
 		<tr> <td></td>  <td><input type="hidden" name="ida" value="'.$row['Numar'].'"/></td></tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip2" value="'.'1'.'"/></td></tr>
 		<tr> <td><input type="submit" value="Apreciaza" id="apreciere" class="button"></td>  </tr>
 		</table>
 		</form>';
 		echo '</br><form action="Poze.php" method="post" enctype="multipart/form-data">
 		<table>
 		<tr> <td></td>  <td><input type="hidden" name="poze" value="'.$row['Numar'].'"/></td></tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip3" value="'.'1'.'"/></td></tr>
 		<tr> <td><input type="submit" value="Pozele" id="pozele" class="button"></td>  </tr>
 		</table>
 		</form></br>';
+		
 		$com = "SELECT count(Postare) FROM `apreciere` where Postare=".$row['Numar']."";
 
 		$numar = $b->query($com);

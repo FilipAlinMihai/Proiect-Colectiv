@@ -101,7 +101,7 @@
         if($row['Email']==$_SESSION['email']){
 		echo '<div class="grid-item">';
 		echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['Imagine1'] ).'" width="350" height="200" id="imagine"/>';
-		echo '<p style="font-size:18"> Locatie: '. $row['Locatie']."</p>";
+		echo '<p style="font-size:18" id='.$row['Numar'].'> Locatie: '. $row['Locatie']."</p>";
 		echo '<p style="font-size:18"> -- Email : '. $row['Email']."</p>";
 		echo '<p style="font-size:18"> -- Tip: '. $row['Tip']."</p>";
 		echo '<p style="font-size:18"> -- Descriere: '.$row['Descriere']."</p>";
@@ -111,13 +111,15 @@
 		<table>
 		<tr> <td>Comentariu</td>  <td><input type="text" name="coment" value=""/></td></tr>
 		<tr> <td></td>  <td><input type="hidden" name="id" value="'.$row['Numar'].'"/></td></tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip" value="'.'4'.'"/></td></tr>
 		<tr> <td><input type="submit" value="adauga" class="button"></td>  </tr>
 		</table>
 		</form>';
 		echo '<form action="AfisareCom.php" method="post" enctype="multipart/form-data">
 		<table>
 		<tr> <td></td>  <td><input type="hidden" name="id" value="'.$row['Numar'].'"/></td></tr>
-		<tr> <td><input type="submit" value="Afisare" class="button"></td>  </tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip1" value="'.'4'.'"/></td></tr>
+		<tr> <td><input type="submit" value="Comentarii" class="button"></td>  </tr>
 		</table>
 		</form>';
         echo '<form action="StergePost.php" method="post" enctype="multipart/form-data">
@@ -129,6 +131,7 @@
 		echo '</br><form action="Poze.php" method="post" enctype="multipart/form-data">
 		<table>
 		<tr> <td></td>  <td><input type="hidden" name="poze" value="'.$row['Numar'].'"/></td></tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip3" value="'.'4'.'"/></td></tr>
 		<tr> <td><input type="submit" value="Pozele" id="pozele" class="button"></td>  </tr>
 		</table>
 		</form></br>';

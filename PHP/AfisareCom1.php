@@ -108,7 +108,14 @@ session_start();
 
 	echo '</div>';
 	echo "<div class='centrat'>";
-	echo '<br><a href="AfisarePostari.php" ><button class="button">Pagina Principală</button></a>';
+	if($_SESSION['tip']=='1')
+			echo '<br><a href="AfisarePostari.php#'.$_SESSION['Comentariu'].'" ><button class="button">Pagina Principală</button></a>';
+			else if($_SESSION['tip']=='2')
+				echo '<br><a href="PostariApreciate.php#'.$_SESSION['Comentariu'].'" ><button class="button">Pagina Principală</button></a>';
+				else if ($_SESSION['tip']=='3') 
+					echo '<br><a href="PostariComentate.php#'.$_SESSION['Comentariu'].'" ><button class="button">Pagina Principală</button></a>';
+					else if($_SESSION['tip']=='4')
+						echo '<br><a href="PostariPropri.php#'.$_SESSION['Comentariu'].'" ><button class="button">Pagina Principală</button></a>';
 	echo '</div>';
 	echo '</br></br></br></br>';
 }
