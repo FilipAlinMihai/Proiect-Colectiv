@@ -1,0 +1,89 @@
+body
+{
+	font-family:"Lucida Console";
+	background-image: url("../imagini/background15.jpg");
+	background-color: #DCDCDC;
+}
+h1
+{
+	text-shadow: 1px 1px;
+}
+.button{
+	font-size:130%;
+	border-radius: 12px;
+	background-color: #FF7F50;
+	color: white;
+	width: 150px;
+}
+.rotund 
+{
+	border-radius: 25px;
+	background: #FF7F50;
+	padding: 20px;
+	width: auto;
+	height: 25%;
+}
+
+.center 
+{
+	margin: auto;
+	width: 50%;
+	padding: 15px;
+	border:3px solid #FF7F50;
+    background-color: #f5f5dc; 
+}
+.Titlu
+{
+	 width: 50%;
+	 box-shadow: 0px 0px;
+}
+
+#subtitlu
+{
+	font-size:140%;
+	font-style:italic;
+	text-align:right;
+}
+
+.butoane
+{
+	text-align:right;
+	box-shadow: 0px 0px;
+}
+div
+{
+	box-shadow: 10px 10px;
+}
+.formular
+{
+	border:3px solid #FF7F50
+}
+.Fereastra
+{
+	margin: auto;
+	width: 50%;
+	padding: 15px;
+	box-shadow: 0px 0px;
+	text-align:center;
+	font-size:130%;
+}
+#date
+{
+	text-align:center;
+}
+#date1
+{
+	text-align:center;
+}
+#tit
+{
+	text-align:center;
+}
+#cont
+{
+	box-shadow: 0px 0px;
+	font-size:140%;
+	font-style:italic;
+	text-align:right;
+	width: 75%;
+}

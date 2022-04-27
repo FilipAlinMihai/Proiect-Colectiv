@@ -4,28 +4,23 @@
 <head>
 <meta charset="UTF-8">
  <link rel="stylesheet" href="./CSS/index2.css">
-<title>Pagina Principala</title>
+<title>Pagina Recomandare</title>
 </head>
 <body>
 
 <div class="center">
 <div id="titlu" style='box-shadow: 0px 0px'>
-<h1  >Adauga Postare</h1>
+<h1  >Adauga Recomandare</h1>
 </div>
 <h2>Fly Trip</h2>
 
-<p style='font-size:130%'>Adauga o postare acum</p>
-<p style='font-size:110%'>Descrie experienta ta</p>
+<p style='font-size:130%'>Adauga o recomandare acum</p>
+
 <textarea rows="7" cols="65" name="descriere" form="posteaza" id="desc">Descriere aici...</textarea>
 </br></br></br>
-<form action="PHP/PostareNoua.php" method="post" class="formular" enctype="multipart/form-data" id="posteaza">
+<form action="PHP/RecomandareNoua.php" method="post" class="formular" enctype="multipart/form-data" id="posteaza">
 <table>
 <tr> <td>Locatie</td>  <td><input type="text" name="locatie" value=""/></td></tr>
-<tr> <td>Email</td>  <td><input type="text" name="email" value=""/></td></tr>
-<tr> <td>Tipul</td>  <td><select name="tip" id="tip">
-      <option value="Recenzie">Recenzie</option>
-      <option value="Oferta">Oferta</option>
-    </td></tr>
 <tr> <td>Imagine</td>  <td><input type="file" name="imagine"></td></tr>
 <tr> <td>Imagine2</td>  <td><input type="file" name="imagine2"></td></tr>
 <tr> <td>Imagine3</td>  <td><input type="file" name="imagine3"></td></tr>

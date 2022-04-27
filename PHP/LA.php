@@ -2,6 +2,7 @@
 
 	$nume=$_POST["numeuADM"];
 	$parola=$_POST["parolaA"];
+	session_start();
 
 		$b=mysqli_connect( "localhost", "root",'',"FlyTrip");
 		if (mysqli_connect_errno()) {
@@ -20,6 +21,7 @@
 			}
 			if($a==1)
 			{
+				$_SESSION['Admin']=$nume;
 				header("Location: ../PA.html");
 			}
 			else
