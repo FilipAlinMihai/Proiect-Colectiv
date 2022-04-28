@@ -1,0 +1,56 @@
+body 
+{
+	background-image: url("../imagini/background15.jpg");
+	background-color: #DCDCDC;
+}
+.button
+{
+	font-size:130%;
+	border-radius: 12px;
+	background-color: #FF7F50;
+	color: white;
+	width: 150px;
+}
+h1
+{
+	text-shadow: 1px 1px;
+}
+.center
+{
+	margin: auto;
+	width: 50%;
+	padding: 15px;
+	border:5px solid #FF7F50;
+    background-color: #f5f5dc;
+}
+div
+{
+	box-shadow: 10px 10px;
+}
+.formular
+{
+	font-size:110%;
+	border:5px solid #FF7F50;
+}
+#titlu
+{
+	text-align:center;
+	box-shadow: 0px 0px;
+}
+input{
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size:110%;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding:3px;
+}
+h1 {
+  text-decoration: underline;
+}
+h2 {
+  text-decoration: underline;
+}
