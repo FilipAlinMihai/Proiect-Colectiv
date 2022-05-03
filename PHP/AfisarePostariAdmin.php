@@ -117,6 +117,13 @@
 		<tr> <td><input type="submit" value="Sterge" class="button"></td>  </tr>
 		</table>
 		</form>';
+		echo '<form action="AfisareComA.php" method="post" enctype="multipart/form-data">
+		<table>
+		<tr> <td></td>  <td><input type="hidden" name="id" value="'.$row['Numar'].'"/></td></tr>
+		<tr> <td></td>  <td><input type="hidden" name="tip1" value="'.'1'.'"/></td></tr>
+		<tr> <td><input type="submit" value="Comentarii" class="button"></td>  </tr>
+		</table>
+		</form>';
 
 		echo '</div>';
 	}

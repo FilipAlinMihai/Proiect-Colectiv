@@ -14,7 +14,10 @@
 	if(mysqli_query($b,$com)){
                      $_SESSION['Comentariu']=$idp;
 					 $_SESSION['tip']=$tip;
-					 header("Location: AfisareCom1.php");
+					 if($tip=='5')
+					 	header("Location: AfisareCom1A.php");
+					 else
+					 	header("Location: AfisareCom1.php");
                     }
 				 else
 					 echo "Datele nu au putut fi sterse ". mysqli_errno($b). " : ". mysqli_error($b);
