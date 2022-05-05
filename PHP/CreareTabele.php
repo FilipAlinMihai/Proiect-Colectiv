@@ -91,6 +91,16 @@ if(mysqli_connect_errno()){
 			echo "Tabelul 'Recomandari' a fost creat cu succes <br/>";
 		else 
 			echo "Eroare".$b->error;
+
+	$sql="CREATE TABLE `RecomandariPrieteni` (
+		`Utilizator1` VARCHAR(100) NOT NULL,
+		`Utilizator2` VARCHAR(100) NOT NULL,
+		`Postare` INT(4) NOT NULL
+		) ";
+		if($b->query($sql)===TRUE)
+		echo "Tabelul 'RecomandariPrieteni' a fost creat cu succes <br/>";
+			else 
+		echo "Eroare".$b->error;
 	$b->close();
 
 ?>

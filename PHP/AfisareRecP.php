@@ -92,13 +92,23 @@
 
 	if (mysqli_connect_errno()) {
 		exit('Connect failed: '. mysqli_connect_error());
+    
 	}
-	$com = "SELECT * FROM `postare` ORDER BY Data DESC;"; 
+
+    echo '<div class="centrat"></br><h1>Recomandate de prietenii tai</h1></br></br></div>';
+	echo '<div class="grid-container">';
+    $com1 = "SELECT * FROM `recomandariprieteni` where Utilizator1='".$_SESSION['email']."'"; 
+	
+	
+	$info1 = $b->query($com1);
+    if ($info1->num_rows > 0) {
+        while($row1 = $info1->fetch_assoc()) {
+
+	$com = "SELECT * FROM `postare` where Numar=".$row1['Postare'].";"; 
 	
 	$numar=0;
 	$info = $b->query($com);
-	echo '<div class="centrat"></br><h1>Postari Noi</h1></br></br></div>';
-	echo '<div class="grid-container">';
+	
 	if ($info->num_rows > 0) {
 		
 	while($row = $info->fetch_assoc()) {
@@ -141,13 +151,7 @@
 		<tr> <td><input type="submit" value="Pozele" id="pozele" class="button"></td>  </tr>
 		</table>
 		</form>';
-		echo '<form action="Recomanda.php" method="post" enctype="multipart/form-data">
-		<table>
-		<tr> <td></td>  <td><input type="hidden" name="postare" value="'.$row['Numar'].'"/></td></tr>
-		<tr> <td></td>  <td><input type="hidden" name="tip3" value="'.'1'.'"/></td></tr>
-		<tr> <td><input type="submit" value="Recomanda" id="pozele" class="button"></td>  </tr>
-		</table>
-		</form></br>';
+		
 		
 		$com = "SELECT count(Postare) FROM `apreciere` where Postare=".$row['Numar']."";
 
@@ -164,16 +168,18 @@
 		echo '</div>';
 	}
 
-	echo '</div>';
-	echo "<div class='centrat1'>";
-	echo '<br><a href="../PaginaP.html"><button class="button">Pagina Principală</button></a>';
-	echo '</div>';
-	echo '</br></br></br></br>';
+	
 	}
 	else {
 	echo 'Nu au fost gasite rezultate';
 	}	
-	
+}
+    }
+    echo '</div>';
+	echo "<div class='centrat1'>";
+	echo '<br><a href="../PaginaP.html"><button class="button">Pagina Principală</button></a>';
+	echo '</div>';
+	echo '</br></br></br></br>';
 	$b->close();
 
 //SELECT count(Persoana),NUmar FROM `postare`,`apreciere` WHERE Postare=Numar GROUP BY Numar ORDER BY count(Persoana) DESC
