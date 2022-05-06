@@ -37,6 +37,8 @@
 					header("Location: PostariComentate.php#".$id."");
 					else if($tip=='4')
 						header("Location: PostariPropri.php#".$id."");
+						else if($tip=='5')
+						header("Location: cautarelocatie1.php#".$id."");
 	}
 	 	else
 			echo  '<script>alert("Procesul eşuat". mysqli_errno($b). " : ". mysqli_error($b))</script>';
