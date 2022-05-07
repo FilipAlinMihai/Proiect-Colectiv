@@ -117,6 +117,8 @@
 					echo '<br><a href="PostariComentate.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
 					else if($tip=='4')
 						echo '<br><a href="PostariPropri.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
+						else if($tip=='6')
+						echo '<br><a href="AfisareRecP.php#'.$id.'" ><button class="button">Pagina Principală</button></a>';
 	echo '</div>';
 	echo '</br></br></br></br>';
 	}

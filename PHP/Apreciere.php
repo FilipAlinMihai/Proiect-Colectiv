@@ -29,6 +29,8 @@ session_start();
 				header("Location: PostariApreciate.php#".$id."");
 				else if ($tip=='3') 
 					header("Location: PostariComentate.php#".$id."");
+					else if ($tip=='6') 
+					header("Location: AfisareRecP.php#".$id."");
 		 }
         
 	 	else
@@ -45,6 +47,8 @@ session_start();
 				header("Location: PostariApreciate.php#".$id."");
 				else if ($tip=='3') 
 					header("Location: PostariComentate.php#".$id."");
+					else if ($tip=='6') 
+					header("Location: AfisareRecP.php#".$id."");
 					
    }
 

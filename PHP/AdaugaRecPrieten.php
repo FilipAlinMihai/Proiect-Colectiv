@@ -21,7 +21,7 @@
 				$a=1;
 		}
 		if($a==1)
-			echo 'Exista deja o cerere trimisa';
+			echo 'Exista deja o recomandare trimisa';
 	}
 		
         $a="INSERT INTO recomandariprieteni VALUES ('".$p1."','".$_SESSION['email']."','".$postare."')";

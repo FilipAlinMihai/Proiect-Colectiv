@@ -118,6 +118,8 @@ session_start();
 						echo '<br><a href="PostariPropri.php#'.$_SESSION['Comentariu'].'" ><button class="button">Pagina Principală</button></a>';
 						else if($_SESSION['tip']=='5')
 						echo '<br><a href="cautareLocatie1.php#'.$_SESSION['Comentariu'].'" ><button class="button">Pagina Principală</button></a>';
+						else if($_SESSION['tip']=='6')
+						echo '<br><a href="AfisareRecP.php#'.$_SESSION['Comentariu'].'" ><button class="button">Pagina Principală</button></a>';
 
 	echo '</div>';
 	echo '</br></br></br></br>';
