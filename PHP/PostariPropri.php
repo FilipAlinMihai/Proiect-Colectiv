@@ -101,7 +101,7 @@
         if($row['Email']==$_SESSION['email']){
 		echo '<div class="grid-item">';
 		echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['Imagine1'] ).'" width="350" height="200" id="imagine"/>';
-		echo '<p style="font-size:18" id='.$row['Numar'].'> Locatie: '. $row['Locatie']."</p>";
+		echo '<p style="font-size:18" id='.$row['Numar'].'> Obiectiv: '. $row['Locatie']."</p>";
 		echo '<p style="font-size:18"> -- Email : '. $row['Email']."</p>";
 		echo '<p style="font-size:18"> -- Tip: '. $row['Tip']."</p>";
 		echo '<p style="font-size:18"> -- Descriere: '.$row['Descriere']."</p>";

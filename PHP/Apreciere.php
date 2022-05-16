@@ -9,6 +9,8 @@ session_start();
 	}
     $com="SELECT * FROM `Apreciere`";
 
+	$vizitat=0;
+
 	$info=$b->query($com);
 	if($info->num_rows > 0)
 	{
@@ -20,6 +22,44 @@ session_start();
 		}
 		
 	}
+
+	$cautalocatie="SELECT Locatie,Email,Numar from `Postare`";
+	$executecautare=$b->query($cautalocatie);
+	if($executecautare->num_rows > 0)
+	{
+		
+		$locatia="";
+		while($randurile=$executecautare->fetch_assoc())
+		{
+			if($randurile['Numar']==$id)
+				$locatia=$randurile["Locatie"];
+		}
+		$cautalocatie1="SELECT Locatie,Email,Numar from `Postare`";
+		$executecautare1=$b->query($cautalocatie1);
+		if($executecautare1->num_rows > 0)
+		while($randurile1=$executecautare1->fetch_assoc())
+		{
+			if($randurile1['Email']==$_SESSION['email'] && $randurile1['Locatie']==$locatia)
+				$vizitat=1;
+			
+		}
+		
+	}
+
+
+	if($vizitat==0)
+	{
+		if($tip=='1')
+			header("Location: AfisarePostari.php#".$id."");
+			else if($tip=='2')
+				header("Location: PostariApreciate.php#".$id."");
+				else if ($tip=='3') 
+					header("Location: PostariComentate.php#".$id."");
+					else if ($tip=='6') 
+					header("Location: AfisareRecP.php#".$id."");
+		
+	}
+	else{
    if($a==0){
     $adauga="Insert into `Apreciere` values ('".$id."','".$_SESSION['email']."')";
 	 	if(mysqli_query($b,$adauga)){
@@ -51,5 +91,6 @@ session_start();
 					header("Location: AfisareRecP.php#".$id."");
 					
    }
+}
 
 ?>

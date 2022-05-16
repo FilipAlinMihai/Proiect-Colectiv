@@ -97,14 +97,14 @@
 	
 	$numar=0;
 	$info = $b->query($com);
-	echo '<div class="centrat"></br><h1>Postari Noi</h1></br></br></div>';
+	echo '<div class="centrat"></br><h1>Recomandari Oficiale</h1></br></br></div>';
 	echo '<div class="grid-container">';
 	if ($info->num_rows > 0) {
 		
 	while($row = $info->fetch_assoc()) {
 		echo '<div class="grid-item">';
 		echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['Imagine1'] ).'" width="350" height="200" id="imagine" name="imgs"/>';
-		echo '<p style="font-size:18" id='.$row['Numar'].'> Locatie: '. $row['Locatie']."</p>";
+		echo '<p style="font-size:18" id='.$row['Numar'].'> Obiectiv: '. $row['Locatie']."</p>";
 		echo '<p style="font-size:18"> -- Scrisa de  : '. $row['Administrator']."</p>";
 		echo '<div class="continut">';
 		echo '<p style="font-size:18"> -- Descriere: '.$row['Descriere']."</p>";
