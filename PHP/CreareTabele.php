@@ -19,7 +19,7 @@ if(mysqli_connect_errno()){
 	`Locatie` VARCHAR(100) NOT NULL,
 	`Email` VARCHAR(100) NOT NULL,
 	`Tip` VARCHAR(20) NOT NULL,
-	`Descriere` VARCHAR(100) ,
+	`Descriere` VARCHAR(500) ,
 	`Numar` INT(4) PRIMARY KEY,
 	`Imagine1` LONGBLOB NOT NULL,
     `Imagine2` LONGBLOB NOT NULL,

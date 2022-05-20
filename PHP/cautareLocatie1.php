@@ -100,7 +100,7 @@
 	echo '<div class="centrat"></br><h2>Rezultatele Căutării</h2></br></br></div>';
 	echo '<div class="grid-container">';
 	while($row = $info->fetch_assoc()) {
-		if( str_contains($row['Locatie'], $_SESSION['Locatie']))
+		if( str_contains(strtoupper($row['Locatie']), strtoupper($nume)))
 		{
 			$a=1;
 	

@@ -26,8 +26,9 @@
 				break;
 			$codul=$codul+1;
 		}
-   
-    $adauga="Insert into `comentarii` values (".$codul.",'".$coment."','".$id."','".$_SESSION['email']."')";
+    if(strlen($coment)>0)
+	{
+    	$adauga="Insert into `comentarii` values (".$codul.",'".$coment."','".$id."','".$_SESSION['email']."')";
 	if(mysqli_query($b,$adauga)){
 		if($tip=='1')
 			header("Location: AfisarePostari.php#".$id."");
@@ -43,7 +44,10 @@
 						header("Location: AfisareRecP.php#".$id."");
 	}
 	 	else
-			echo  '<script>alert("Procesul eşuat". mysqli_errno($b). " : ". mysqli_error($b))</script>';
+			echo  'Esuare la introducere';
+}
+else
+			echo  'Comentariul nu trebuie sa fie gol';
     
     
 $b->close();

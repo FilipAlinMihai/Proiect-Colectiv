@@ -27,7 +27,6 @@ session_start();
 	$executecautare=$b->query($cautalocatie);
 	if($executecautare->num_rows > 0)
 	{
-		
 		$locatia="";
 		while($randurile=$executecautare->fetch_assoc())
 		{
