@@ -23,7 +23,8 @@
 		if($a==1)
 			echo 'Exista deja o recomandare trimisa';
 	}
-		
+		if($a==0)
+		{
         $a="INSERT INTO recomandariprieteni VALUES ('".$p1."','".$_SESSION['email']."','".$postare."')";
         
         if(mysqli_query($b,$a)){
@@ -31,5 +32,6 @@
         }
         else
           echo "Proces esuat". mysqli_errno($b). " : ". mysqli_error($b);
+	}
 $b->close();
 ?>

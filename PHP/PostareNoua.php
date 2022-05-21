@@ -1,7 +1,8 @@
 <?php
+session_start();
     $descriere=$_POST["descriere"];
 	$locatie=$_POST["locatie"];
-	$email=$_POST["email"];
+	
 	$tip=$_POST["tip"];
 	$imagine=addslashes (file_get_contents($_FILES['imagine']['tmp_name']));
 	$imagine2=addslashes (file_get_contents($_FILES['imagine2']['tmp_name']));
@@ -32,7 +33,7 @@
 	}
 	date_default_timezone_set("Europe/Bucharest");
 	$d=date("Y/m/d ").date("h:i");
-    $postare="Insert into `postare` values ('".$locatie."','".$email."','".$tip."','".$descriere."',".$codul.",'".$imagine."','".$imagine2."','".$imagine3."','".$d."')";
+    $postare="Insert into `postare` values ('".$locatie."','".$_SESSION['email']."','".$tip."','".$descriere."',".$codul.",'".$imagine."','".$imagine2."','".$imagine3."','".$d."')";
 		if(mysqli_query($b,$postare))
 			echo "Postarea a fost adăugată";
 		else
